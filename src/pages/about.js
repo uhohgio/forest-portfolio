@@ -44,12 +44,12 @@ const AboutPage = () => {
           </div>
           <div className={pageStyles.heading}>
             <h1>Giovanna Ehrig</h1>
-            <p >California-based Junior Developer</p>
+            <p>Junior Developer and UI/UX designer</p>
             {/* <p style={{fontWeight: 'normal'}}>Native Fluency in English and Spanish</p> */}
           </div>
         <h2>About Me</h2>
         <p>
-          Hello! I'm Giovanna Ehrig, a 23-year-old software developer based in Los Angeles. My journey into tech is fueled by a passion for creating immersive and intuitive user experiences. I thrive on solving complex problems and bringing designs to life with clean, efficient code.
+          Hello! I'm Giovanna Ehrig, a 23-year-old software developer from Los Angeles, California. My journey into tech is fueled by a passion for creating immersive and intuitive user experiences. I thrive on solving complex problems and bringing designs to life with clean, efficient code.
         </p>
         <p>
           My core tech stack includes <strong>React, JavaScript, HTML, and CSS</strong>, with a strong focus on accessibility, performance, and responsive design. I'm always eager to learn new technologies and explore innovative ways to build engaging web applications.

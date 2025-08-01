@@ -83,7 +83,7 @@ export const query = graphql`
             tags
             thumbnail {
               childImageSharp {
-                gatsbyImageData(width: 300, aspectRatio: 1.5, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+                gatsbyImageData(width: 800, aspectRatio: 1.5, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
               }
             }
           }

@@ -2,6 +2,7 @@
 
 .gridContainer {
   width: 100%;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* Responsive grid */
   gap: 25px;
