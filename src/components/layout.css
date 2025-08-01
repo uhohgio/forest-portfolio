@@ -24,6 +24,8 @@
   --size-content: 54rem;
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
+  --background-color-light: #BACECD; /* Light mode background */
+  --background-color-dark: #2C2C59; /* Dark mode background */
 }
 html {
   -webkit-text-size-adjust: 100%;
@@ -222,3 +224,4 @@ pre tt:before,
 pre tt:after {
   content: none;
 }
+

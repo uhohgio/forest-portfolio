@@ -1,0 +1,41 @@
+/* src/components/Card.module.css */
+
+.card {
+  background-color: var(--card-background-color);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--secondary-color);
+  text-decoration: none; /* Remove underline for links */
+  color: var(--text-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
+  text-align: center;
+  display: flex; /* For centering content vertically */
+  justify-content: center;
+  align-items: center;
+  min-height: 100px; /* Ensure cards have a consistent height */
+}
+
+.card:hover {
+  transform: translateY(1px); /* Lift effect on hover */
+  box-shadow: none;
+  background-color: var(--primary-color); /* Highlight on hover */
+  color: white; /* Change text color on hover */
+}
+
+.card h3 {
+  margin: 0; /* Remove default margin from h3 */
+  font-size: 1.4em;
+}
+
+/* Dark mode adjustments for cards */
+:global(.dark-mode) .card {
+  background-color: var(--card-background-color-dark);
+  color: var(--text-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+:global(.dark-mode) .card:hover {
+  background-color: var(--primary-color); /* Still highlight on hover in dark mode */
+  color: white;
+}

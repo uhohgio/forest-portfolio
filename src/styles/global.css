@@ -1,0 +1,49 @@
+/* src/styles/global.css */
+
+/* --- Base/Light Mode Variables --- */
+:root {
+  --primary-color: #bacecd; /* Figma-inspired purple */
+  --secondary-color: #394F1C; /* A good contrasting blue */
+  --text-color: #333;
+  --text-color-light: #666;
+  --card-background-color: rgba(255, 255, 255, 0.9); /* Opaque white */
+  --button-bg-color: #78a3b8;
+  --button-bg-color-hover: #394F1C;
+  --panel-border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Dark Mode Variables --- */
+body.dark-mode {
+  --primary-color: #aaa; /* Lighter purple for dark mode contrast */
+  --secondary-color: #eee; /* React blue for dark mode contrast */
+  --text-color: #f8f8f2; /* Light text */
+  --text-color-light: #b3b3b3; /* Lighter grey text */
+  --card-background-color: rgba(50, 50, 70, 0.9); /* Darker opaque background */
+  --button-bg-color: #557; /* React blue button */
+  --button-bg-color-hover: #335;
+  --panel-border-color: rgba(224, 215, 215, 0.2);
+}
+
+/* --- Basic Global Resets/Styles --- */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for theme */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out;
+}
+
+a {
+  color: var(--text-color-light);
+  transition: color 0.3s ease-in-out;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}

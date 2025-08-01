@@ -1,0 +1,116 @@
+/* src/components/Layout.module.css */
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -5; /* Send it behind everything else */
+  object-fit: cover; /* Ensure it covers the whole screen */
+  background: linear-gradient(var(--background-color-light, #BACECD) 70%,#2c5957); /* Default light mode background */
+}
+
+:global(.dark-mode) .background {
+    background: linear-gradient(var(--background-color-dark, #2C2C59) 70%,#1e3d3c); /* Dark mode background */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  padding: 20px; /* Some padding around the edges */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  position: relative; /* For z-indexing child elements if needed */
+  z-index: 0;
+}
+
+.mainContent {
+  /* This will be your large central changing section */
+  background-color: var(--card-background-color, rgba(255, 255, 255, 0.85)); /* Default light mode */
+  border-radius: 15px; /* Rounded corners from your Figma */
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%; /* Adjust as needed */
+  max-width: 900px; /* Maximum width for larger screens */
+  min-height: 60vh; /* Minimum height */
+  margin-top: 60px;
+  display: flex; /* For internal layout of central panel */
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Base styles for dark mode (will be applied via a class on <body> or .container) */
+:global(.dark-mode) .mainContent {
+  background-color: var(--card-background-color-dark, rgba(50, 50, 70, 0.85));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .mainContent {
+    width: 95%;
+    padding: 20px;
+  }
+  .pineTreeLeft, .pineTreeRight {
+    display: none;
+  }
+}
+
+@media (max-height: 768px) {
+    .pineTreeLeft, .pineTreeRight {
+    display: none;
+  }
+}
+
+.pineTreeLeft, .pineTreeRight {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none
+}
+
+.pineTreeLeft {
+  bottom: -20%;
+  left: -25%;
+}
+.pineTreeRight {
+  bottom: -20%;
+  right: -25%;
+}
+
+@media (min-width: 1200px) {
+    .pineTreeLeft {
+        bottom: -10%;
+        left: -10%;
+    }
+    .pineTreeRight {
+        bottom: -10%;
+        right: -10%;
+    }
+}
+
+.konamiMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1001; /* Above everything else */
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeInOut 5s forwards; /* Simple animation for appearing/disappearing */
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  10% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  90% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+}

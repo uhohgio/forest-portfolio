@@ -1,0 +1,125 @@
+/* src/templates/template.module.css */
+
+.pageContent {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  color: var(--text-color);
+}
+
+.pageContent h1 {
+  font-size: 2.8em;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.pageContent .meta {
+  font-size: 0.9em;
+  color: var(--text-color-light);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.projectThumbnail {
+  margin: 2rem auto;
+  display: block; /* Center the image */
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.markdownContent {
+  line-height: 1.8;
+  font-size: 1.1em;
+}
+
+.markdownContent h2 {
+  font-size: 2em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.markdownContent h3 {
+  font-size: 1.6em;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+
+.markdownContent p {
+  margin-bottom: 1em;
+}
+
+.markdownContent ul, .markdownContent ol {
+  margin-left: 25px;
+  margin-bottom: 1em;
+}
+
+.markdownContent li {
+  margin-bottom: 0.5em;
+}
+
+.markdownContent a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.markdownContent pre {
+  background-color: rgba(0, 0, 0, 0.05); /* Light background for code blocks */
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 0.9em;
+}
+
+.markdownContent code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.backButton {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 10px 15px;
+  background-color: var(--button-bg-color);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.backButton:hover {
+  background-color: var(--button-bg-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode adjustments for template content */
+:global(.dark-mode) .pageContent h1 {
+  color: var(--secondary-color);
+}
+
+:global(.dark-mode) .markdownContent pre {
+  background-color: rgba(255, 255, 255, 0.08); /* Dark background for code blocks */
+}
+
+:global(.dark-mode) .markdownContent code {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-color);
+}
+
+:global(.dark-mode) .backButton {
+  background-color: var(--button-bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+:global(.dark-mode) .backButton:hover {
+  background-color: var(--button-bg-color-dark-hover);
+}

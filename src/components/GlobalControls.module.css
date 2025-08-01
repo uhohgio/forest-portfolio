@@ -1,0 +1,55 @@
+/* src/components/GlobalControls.module.css */
+
+.container {
+  position: fixed; /* Position relative to .mainContent in Layout.js */
+  top: 7px;
+  left: 20px; 
+  right: 20px; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.controlButton {
+  all: unset; /* Reset all styles */
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.9em;
+  width: clamp(2rem, 5vw, 4rem);
+  height: clamp(2rem, 5vw, 4rem);
+  text-decoration: none; /* For the Link component */
+  display: flex; /* For icon + text alignment */
+  align-items: center;
+  gap: 5px; /* Space between icon and text */
+  filter: drop-shadow(0px 2px 3px var(--secondary-color));
+}
+
+.controlButton:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.controlButton:hover {
+  filter: brightness(0.5);
+  transform: translateY(-1px); /* Lift effect on hover */
+}
+
+/* Position specific buttons */
+.container > *:nth-child(3) { /* (first three children) */
+  margin-right: auto; /* Pushes it to the left */
+}
+
+.container > *:nth-child(4) { /* Exit button (fourth child) */
+  margin-left: auto; /* Pushes it to the right */
+}
+
+/* Dark mode adjustments */
+:global(.dark-mode) .controlButton {
+  filter: brightness(0.8) drop-shadow(0px 2px 3px var(--primary-color)); /* Dark mode brightness */
+}
+
+:global(.dark-mode) .controlButton:hover {
+  filter: brightness(1.6); /* brighten on hover in dark mode */
+  transform: translateY(-1px); /* Lift effect on hover */
+}

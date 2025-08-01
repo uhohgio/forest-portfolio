@@ -1,51 +1,104 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import { Helmet } from 'react-helmet'; // For meta tags
+import { StaticImage } from 'gatsby-plugin-image'; // For background image
+import * as layoutStyles from './layout.module.css'; // Using CSS Modules
+import GlobalControls from './GlobalControls';
+import '../styles/global.css'; // Global styles
+import React, { useMemo, useEffect, useState } from 'react'; // For side effects like toggling dark mode
+import pineTree from '/static/pine_tree.svg';
+import AnimatedPageWrapper from './AnimatedPageWrapper';
+import useKonamiCode from '../hooks/useKonamiCode';
+import GlobalContext from '../context/GlobalControls';
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
+  const [showKonamiMessage, setShowKonamiMessage] = useState(false);
+
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedMode = localStorage.getItem('isDarkMode');
+      return savedMode === 'true';
+    }
+    return false;
+  });
+
+  const [isVolumeOn, setIsVolumeOn] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedVolume = localStorage.getItem('isVolumeOn');
+      return savedVolume === 'true';
+    }
+    return true;
+  });
+
+  // Persist dark mode and volume state (similar to Layout)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('isDarkMode', isDarkMode);
+      if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
       }
     }
-  `)
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('isVolumeOn', isVolumeOn);
+    }
+  }, [isVolumeOn]);
+
+  // Konami code callback (uses playAudio from context)
+  const handleKonamiSuccess = () => {
+    setShowKonamiMessage(true);
+    console.log("Konami Code Activated!");
+    setTimeout(() => setShowKonamiMessage(false), 5000);
+  };
+  useKonamiCode(handleKonamiSuccess);
+
+  const contextValue = useMemo(() => ({
+    isDarkMode,
+    setIsDarkMode,
+    isVolumeOn,
+    setIsVolumeOn,
+  }), [isDarkMode, isVolumeOn]);
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+    <GlobalContext.Provider value={contextValue}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Giovanna Ehrig - Portfolio</title>
+        <meta name="description" content="Get to know Giovanna Ehrig through her portfolio!" />
+        <link rel="icon" href="src/images/favicon.ico" type="image/x-icon" />
+      </Helmet>
 
-export default Layout
+      {/* Static Background Image */}
+      <StaticImage
+        src="../images/mountain-range-green.png" // Your Figma background image path
+        alt="Game-like forest background"
+        layout="fullWidth"
+        placeholder="blurred"
+        loading="eager"
+        className={layoutStyles.background}
+      />
+
+        <GlobalControls />
+
+        {showKonamiMessage && (
+          <div className={layoutStyles.konamiMessage}>
+            Konami Code Activated!
+          </div>
+        )}
+
+        {/* This is where all page content (the central panel) will go */}
+        <img src={pineTree} className={layoutStyles.pineTreeLeft} alt='left pine tree'></img><img src={pineTree} className={layoutStyles.pineTreeRight} alt='right pine tree'></img>
+      <AnimatedPageWrapper >
+        <div className={layoutStyles.container} >  
+          <main className={layoutStyles.mainContent}>
+            {children}
+          </main>
+        </div>
+      </AnimatedPageWrapper>
+    </GlobalContext.Provider>
+  );
+};
+
+export default Layout;

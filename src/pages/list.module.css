@@ -1,0 +1,164 @@
+/* src/pages/list.module.css */
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 25px;
+  margin-top: 2rem;
+  padding-bottom: 2rem; /* Space below grid */
+}
+
+.gridItem {
+  background-color: var(--card-background-color);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid var(--panel-border-color); /* Subtle border for definition */
+}
+
+.gridItem:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+}
+
+.gridItem:hover h3,
+.gridItem:hover .meta,
+.gridItem:hover .tag {
+  color: white; /* Ensure text/tags change color on hover */
+}
+
+
+.thumbnail {
+  width: 100%;
+  height: 150px; /* Fixed height for consistency */
+  object-fit: cover; /* Crop to fit */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.gridItem h3 {
+  font-size: 1.6em;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--primary-color); /* Project title color */
+}
+
+.gridItem p {
+  font-size: 0.9em;
+  color: var(--text-color-light);
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-color-light);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  white-space: nowrap; /* Prevent tags from breaking */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.gridItem:hover .tag {
+  background-color: rgba(255, 255, 255, 0.2); /* Tag background on hover */
+  color: white;
+}
+
+/* For blog list, simpler list styling */
+.listContainer {
+  margin-top: 2rem;
+}
+
+.listItem {
+  display: block;
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: var(--text-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+  border: 2px solid var(--secondary-color);
+}
+
+.listItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.listItem:hover h3,
+.listItem:hover .meta,
+.listItem:hover .tag {
+  color: white;
+}
+
+.listItem h3 {
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.listItem .meta {
+  font-size: 0.9em;
+  color: var(--text-color-light);
+  margin-bottom: 10px;
+}
+
+/* Dark mode adjustments for lists */
+:global(.dark-mode) .gridItem,
+:global(.dark-mode) .listItem {
+  background-color: var(--card-background-color-dark);
+  color: var(--text-color);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+:global(.dark-mode) .gridItem:hover,
+:global(.dark-mode) .listItem:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+:global(.dark-mode) .gridItem h3,
+:global(.dark-mode) .listItem h3 {
+  color: var(--primary-color);
+}
+
+:global(.dark-mode) .gridItem:hover h3,
+:global(.dark-mode) .listItem:hover h3,
+:global(.dark-mode) .gridItem:hover p,
+:global(.dark-mode) .listItem:hover p {
+  color: white;
+}
+
+:global(.dark-mode) .tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color-light);
+}
+
+:global(.dark-mode) .gridItem:hover .tag,
+:global(.dark-mode) .listItem:hover .tag {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+}

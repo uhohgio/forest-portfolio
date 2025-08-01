@@ -1,128 +1,111 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React, { useCallback, useContext } from 'react';
+import { Link } from 'gatsby'; // Gatsby's way to navigate between pages
+import { StaticImage } from 'gatsby-plugin-image'; // For profile image
+import * as indexStyles from './index.module.css'; // CSS Modules for this page
+import * as cardStyles from '../components/Card.module.css'; // Example card styles
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faLinkedin, faGithub, faJs, faReact, faNodeJs, faPython, faUnity } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import cPlusPlusGreen from '/static/cplusplus-green.svg'
+import GlobalContext from '../context/GlobalControls';
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+const IndexPage = () => {
+  const [showSecret, setShowSecret] = React.useState(false);
+  const { isVolumeOn } = useContext(GlobalContext);
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
+  const playAudioLocally = useCallback((src) => {
+    if (isVolumeOn && typeof window !== 'undefined') {
+      const audio = new Audio(src);
+      audio.play().then(() => {
+        
+      }).catch(e => {
+        console.error(`[IndexPage-Local-Callback] Audio play failed for ${src}:`, e);
+      });
+    } else {
+    }
+  }, [isVolumeOn]); // Crucial: This useCallback *must* depend on isVolumeOn.
 
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+  const toggleSecret = () => {
+    setShowSecret(!showSecret);
+    handleMouseClick();
+  }
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+  const handleMouseClick = () => {
+    playAudioLocally('/mouse-click.mp3');
+  }
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+  const handleButtonHover = () => {
+    playAudioLocally('/volume-toggle-sound.mp3');
+  }
+  return (
+      <div className={indexStyles.landingPageContent}>
+        <div className={indexStyles.profileHeader}>
+          {/* Profile Image - Replace with your actual image */}
+          <div
+              onClick={toggleSecret}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') { // Spacebar is also common for buttons
+                  toggleSecret();
+                }
+              }}
+              tabIndex="0" // Makes the div focusable
+              role="button" // Tells assistive tech it's a button
+              aria-expanded={showSecret} // Indicates if the secret content is visible
+              aria-controls="secret-text" // Links to the ID of the secret text
+              className={indexStyles.secretImageWrapper} // Add a class for styling/cursor
+            >
+              <StaticImage
+                src='../images/gio-profile.jpg'
+                alt="Giovanna Ehrig Profile"
+                className={indexStyles.profileImage}
+                quality={100}
+                formats={["auto", "webp", "avif"]}
+              />
+              {showSecret && (
+              <p id="secret-text" >A picture of me in Zion National Park!</p> // Add id for aria-controls
+            )}
+            </div>
+          <h1 className={indexStyles.heading}><span style={{ color: 'var(--primary-color)', fontSize: '2rem'}}>Hi! I'm</span> <br /> Gio Ehrig</h1>
+        </div>
+        <div className={indexStyles.profileHeader}>
+          <p className={indexStyles.tagline}>23 year old software developer based in LA</p>
+          {/* Tech Stack - Placeholder for now */}
+          <div className={indexStyles.techStack}>
+            <FontAwesomeIcon icon={faJs} className={indexStyles.techStackElem}/>
+            <FontAwesomeIcon icon={faReact} className={indexStyles.techStackElem}/>
+            <FontAwesomeIcon icon={faNodeJs} className={indexStyles.techStackElem}/>
+            <FontAwesomeIcon icon={faPython} className={indexStyles.techStackElem}/>
+            <img src={cPlusPlusGreen} className={indexStyles.techStackElem}  alt='C++'/>
+            <FontAwesomeIcon icon={faUnity} className={indexStyles.techStackElem}/>
+          </div>
+        </div>  
 
-export default IndexPage
+        {/* Navigation Buttons (About Me, My Projects, etc.) */}
+        <div className={indexStyles.navigationGrid}>
+          <Link to="/about" className={cardStyles.card} onMouseEnter={handleButtonHover} onClick={handleMouseClick}>
+            <h3>About Me</h3>
+          </Link>
+          <Link to="/projects" className={cardStyles.card} onMouseEnter={handleButtonHover} onClick={handleMouseClick}>
+            <h3>My Projects</h3>
+          </Link>
+          <Link to="/experience" className={cardStyles.card} onMouseEnter={handleButtonHover} onClick={handleMouseClick}>
+            <h3>Experience & Education</h3>
+          </Link>
+          <Link to="/blog" className={cardStyles.card} onMouseEnter={handleButtonHover} onClick={handleMouseClick}>
+            <h3>My Blog</h3>
+          </Link>
+        </div>
+
+        <div>
+          {/* Add SVG icons or FontAwesome here */}
+          <Link to="mailto:gioehrig@gmail.com" target="_blank" ><FontAwesomeIcon icon={faEnvelope} className={indexStyles.bottomNavElement} onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
+          <Link to="https://www.linkedin.com/in/gio-ehrig-691901214/" target="_blank"><FontAwesomeIcon icon={faLinkedin} className={indexStyles.bottomNavElement} onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
+          <Link to="https://github.com/uhohgio" target="_blank" ><FontAwesomeIcon icon={faGithub} className={indexStyles.bottomNavElement} onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
+        </div>
+      </div>
+  );
+};
+
+export default IndexPage;

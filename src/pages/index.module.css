@@ -1,0 +1,137 @@
+/* src/pages/index.module.css */
+
+.landingPageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%; /* Fill the mainContent area */
+  justify-content: space-between; /* Pushes profile to top, nav to middle, bottomNav to bottom */
+}
+
+.profileHeader {
+  /* margin-bottom: 2rem; Space before navigation grid */
+  padding-top: 1rem; /* Give some space from the top of the panel */
+  width: 100%; /* Full width of the mainContent */
+  display: inline-block;
+  text-align: left;
+  
+}
+
+.profileImage {
+  border-radius: 5%; /* Make it round */
+  border: 4px solid white; /* Example border color */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.secretImageWrapper {
+  cursor: pointer; /* Indicate it's clickable */
+  display: inline-block;
+  width: clamp(20px, 35vw, 250px); /* Fixed size for profile image */
+  height: clamp(20px, 35vw, 250px); /* Fixed size for profile image */
+  align-items: flex-start;
+}
+
+.secretImageWrapper:focus {
+  border-radius: 5%; /* Match image shape */ 
+}
+
+#secret-text {
+  position: absolute;
+  margin: 0;
+}
+
+.heading {
+  font-size: 3em;
+  color: var(--text-color, #555);
+  margin: 0 3rem;
+  line-height: 1;
+  display: inline-block;
+  text-align: left; /* Align text to the left */
+  vertical-align: top;
+  font-size: clamp(1rem, 15vw, 6rem); /* Adjusted for better fit */
+}
+
+.tagline {
+  font-size: clamp(0.5rem, 4vw, 1.5em);
+  color: var(--text-color-light, #666);
+  margin-bottom: 1.5rem;
+}
+
+.techStack span {
+  font-size: clamp(0.5rem, 4vw, 1.5em); /* Placeholder for actual icons */
+  margin: 0 10px;
+  color: var(--secondary-color, #394F1C);
+  cursor: pointer;
+}
+
+.techStackElem {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  color: var(--secondary-color, #394F1C);
+}
+
+:global(.dark-mode) .techStackElem {
+  filter: brightness(8) saturate(0);
+}
+
+
+.navigationGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns for buttons */
+  gap: 20px; /* Space between buttons */
+  width: 100%;
+  margin: 2rem;
+}
+
+/* Adjust button grid for smaller screens */
+@media (max-width: 600px) {
+  .navigationGrid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for buttons */
+  }
+}
+
+.bottomNavElement {
+  /* font-size: 1.2em;  */
+  width: 30px;
+  height: 30px;
+  margin: 0 15px;
+  color: var(--secondary-color, #394F1C);
+  cursor: pointer;
+  padding-bottom: 1rem; /* Space from the bottom of the panel */
+}
+.bottomNavElement :hover {
+  /* font-size: 1.2em;  */
+  transform: translateY(2%);
+  filter: brightness(0.8);
+  outline: 5px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.bottomNavElement :focus {
+  outline: 5px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Basic theme variables (will define in global.css later) */
+:global(body) {
+  --primary-color: #BACECD; /* Example Purple */
+  --secondary-color: #394F1C; /* Example Blue */
+  --text-color: #333;
+  --text-color-light: #666;
+  --card-background-color: rgba(255, 255, 255, 0.85);
+}
+
+:global(.dark-mode) {
+  --primary-color: #2c2c59; /* Lighter purple for dark mode */
+  --secondary-color: #bebebe; /* React blue for dark mode */
+  --text-color: #f8f8f2;
+  --text-color-light: #b3b3b3;
+  --card-background-color-dark: rgba(50, 50, 70, 0.85); /* Defined in layout.module.css */
+}
+

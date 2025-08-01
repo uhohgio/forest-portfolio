@@ -8,36 +8,59 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: "/forest-portfolio",
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Giovanna Ehrig's Portfolio`,
+    description: `A unique, game-like, forest-themed portfolio showcasing web development skills.`,
+    author: `@uhohgio`, 
+    siteUrl: `https://www.gioehrig.com`, // Replace with your deployed URL
   },
   plugins: [
-    `gatsby-plugin-image`,
+    `gatsby-plugin-react-helmet`, // Manages <head> for SEO/accessibility
+    `gatsby-plugin-image`, // Optimizes images
+    `gatsby-plugin-sharp`, // Required for image optimization
+    `gatsby-transformer-sharp`, // Required for image optimization
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/images`, // Path to your static images
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.ico`, // Path to your favicon image
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/content/projects`, // Path for your project Markdown files
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/content/blog`, // Path for your blog Markdown files
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`, // Processes images within markdown
+            options: {
+              maxWidth: 800, // Max width of images in markdown
+            },
+          },
+        ],
+      },
+    },
+    // Configure CSS Modules (Gatsby supports this out of the box with .module.css)
+    // No specific plugin needed here, just follow naming convention
   ],
-}
+};
