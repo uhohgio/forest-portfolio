@@ -8,6 +8,7 @@ import { faLinkedin, faGithub, faJs, faReact, faNodeJs, faPython, faUnity } from
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import cPlusPlusGreen from '/static/cplusplus-green.svg'
 import GlobalContext from '../context/GlobalControls';
+import { withPrefix } from 'gatsby';
 
 const IndexPage = () => {
   const [showSecret, setShowSecret] = React.useState(false);
@@ -16,7 +17,7 @@ const IndexPage = () => {
 
   const playAudioLocally = useCallback((src) => {
     if (isVolumeOn && typeof window !== 'undefined') {
-      const audio = new Audio(src);
+      const audio = new Audio(withPrefix(src));
       audio.play().then(() => {
         
       }).catch(e => {

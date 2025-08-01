@@ -4,13 +4,14 @@ import * as pageStyles from './page.module.css'; // Reusable styles for generic 
 import GlobalContext from '../context/GlobalControls';
 import { useCallback, useContext } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import { withPrefix } from 'gatsby';
 
 const AboutPage = () => {
   const [showSecret, setShowSecret] = React.useState(false);
   const { isVolumeOn } = useContext(GlobalContext);
     const playAudio = useCallback((src) => {
       if (isVolumeOn && typeof window !== 'undefined') {
-        const audio = new Audio(src);
+        const audio = new Audio(withPrefix(src));
         audio.play().then(() => {
           
         }).catch(e => {

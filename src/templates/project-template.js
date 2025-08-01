@@ -5,6 +5,7 @@ import * as templateStyles from './template.module.css'; // Reusable styles for 
 import { Helmet } from 'react-helmet';
 import GlobalContext from '../context/GlobalControls';
 import { useCallback, useContext } from 'react';
+import { withPrefix } from 'gatsby';
 
 const ProjectTemplate = ({ data }) => {
   // data is the result of the GraphQL query defined at the bottom
@@ -13,7 +14,7 @@ const ProjectTemplate = ({ data }) => {
   const { isVolumeOn } = useContext(GlobalContext);
   const playAudio = useCallback((src) => {
     if (isVolumeOn && typeof window !== 'undefined') {
-      const audio = new Audio(src);
+      const audio = new Audio(withPrefix(src));
       audio.play().then(() => {
         
       }).catch(e => {

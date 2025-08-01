@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 import * as controlsStyles from './GlobalControls.module.css'; // CSS Modules for controls
 import GlobalContext from '../context/GlobalControls';
+import { withPrefix } from 'gatsby';
 
 import volOn from '/static/Volume-on.svg'; // Path to volume on icon
 import volOff from '/static/volume-x.svg'; // Path to volume off icon
@@ -55,7 +56,7 @@ const toggleHome = () => {
 }
 
 const playAudio = (src) => {
-  const audio = new Audio(src);
+  const audio = new Audio(withPrefix(src));
   audio.play();
 }
 

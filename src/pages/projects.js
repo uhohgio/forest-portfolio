@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as pageStyles from './page.module.css'; // Reusable styles
 import * as listStyles from './list.module.css'; // New styles for lists
 import GlobalContext from '../context/GlobalControls';
+import { withPrefix } from 'gatsby';
 
 const ProjectsPage = ({ data }) => {
   const { isVolumeOn } = useContext(GlobalContext)
@@ -11,7 +12,7 @@ const ProjectsPage = ({ data }) => {
 
    const playAudio = useCallback((src) => {
       if (isVolumeOn && typeof window !== 'undefined') {
-        const audio = new Audio(src);
+        const audio = new Audio(withPrefix(src));
         audio.play().then(() => {
           
         }).catch(e => {

@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import * as templateStyles from './template.module.css';
 import GlobalContext from '../context/GlobalControls';
 import { useCallback, useContext } from 'react';
+import { withPrefix } from 'gatsby';
 
 const BlogPostTemplate = ({ data }) => {
   const { html, frontmatter } = data.markdownRemark;
@@ -10,7 +11,7 @@ const BlogPostTemplate = ({ data }) => {
   const { isVolumeOn } = useContext(GlobalContext);
     const playAudio = useCallback((src) => {
       if (isVolumeOn && typeof window !== 'undefined') {
-        const audio = new Audio(src);
+        const audio = new Audio(withPrefix(src));
         audio.play().then(() => {
           
         }).catch(e => {

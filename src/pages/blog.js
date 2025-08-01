@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import * as pageStyles from './page.module.css';
 import * as listStyles from './list.module.css'; // Reusing list styles
 import GlobalContext from '../context/GlobalControls';
+import { withPrefix } from 'gatsby';
 
 const BlogPage = ({ data }) => {
   const { isVolumeOn } = useContext(GlobalContext);
@@ -11,7 +12,7 @@ const BlogPage = ({ data }) => {
 
   const playAudio = useCallback((src) => {
     if (isVolumeOn && typeof window !== 'undefined') {
-      const audio = new Audio(src);
+      const audio = new Audio(withPrefix(src));
       audio.play().then(() => {
         
       }).catch(e => {
