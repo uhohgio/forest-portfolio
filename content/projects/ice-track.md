@@ -42,7 +42,8 @@ I will also take much credit for spearheading the documentation on this project.
 - File complaints
 - Track shipments and orders
 
-🔗 [GitHub Repo](https://github.com/kchan5071/Ice-Cream-Tracker)
+
+🔗 <a href="https://github.com/kchan5071/Ice-Cream-Tracker" target="_blank">GitHub Repo</a>
 
 ## Photo Gallery
 

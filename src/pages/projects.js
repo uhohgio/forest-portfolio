@@ -36,7 +36,7 @@ const ProjectsPage = ({ data }) => {
   return (
       <div className={pageStyles.pageContent}>
         <h2>My Projects</h2>
-        <p>Here you'll find a selection of my recent web development projects.</p>
+        <p>Here you'll find a selection of my favorite software development projects. </p>
 
         <div className={listStyles.gridContainer}>
           {projects.map(({ node }) => {

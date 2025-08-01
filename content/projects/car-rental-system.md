@@ -24,4 +24,4 @@ These topics were well cemented in my mind and I was able to use them 2 years la
 
 Although never implemented, the planning for this application was very very in depth and taught me a lot about what it means to plan out a software system. I learned a lot about different methodologies and planning schemas and also how to properly document different aspects of a project. 
 
-🔗 [GitHub Repo](https://github.com/uhohgio/CS250-Sp23-Group19)
+🔗 <a href="https://github.com/uhohgio/CS250-Sp23-Group19" target="_blank">GitHub Repo</a>

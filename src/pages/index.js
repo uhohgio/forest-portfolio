@@ -101,9 +101,9 @@ const IndexPage = () => {
 
         <div>
           {/* Add SVG icons or FontAwesome here */}
-          <Link to="mailto:gioehrig@gmail.com" target="_blank" ><FontAwesomeIcon icon={faEnvelope} className={indexStyles.bottomNavElement} onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
-          <Link to="https://www.linkedin.com/in/gio-ehrig-691901214/" target="_blank"><FontAwesomeIcon icon={faLinkedin} className={indexStyles.bottomNavElement} onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
-          <Link to="https://github.com/uhohgio" target="_blank" ><FontAwesomeIcon icon={faGithub} className={indexStyles.bottomNavElement} onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
+          <Link to="mailto:gioehrig@gmail.com" target="_blank" className={indexStyles.bottomNavElement}><FontAwesomeIcon icon={faEnvelope}  onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
+          <Link to="https://www.linkedin.com/in/gio-ehrig-691901214/" target="_blank" className={indexStyles.bottomNavElement}><FontAwesomeIcon icon={faLinkedin}  onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
+          <Link to="https://github.com/uhohgio" target="_blank" className={indexStyles.bottomNavElement}><FontAwesomeIcon icon={faGithub}  onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
         </div>
       </div>
   );

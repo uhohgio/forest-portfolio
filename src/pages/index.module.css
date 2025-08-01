@@ -97,26 +97,17 @@
 }
 
 .bottomNavElement {
-  /* font-size: 1.2em;  */
-  width: 30px;
-  height: 30px;
+  font-size: 2.5rem; 
   margin: 0 15px;
   color: var(--secondary-color, #394F1C);
   cursor: pointer;
   padding-bottom: 1rem; /* Space from the bottom of the panel */
 }
 .bottomNavElement :hover {
-  /* font-size: 1.2em;  */
-  transform: translateY(2%);
+  transform: scale(1.05);
   filter: brightness(0.8);
-  outline: 5px solid var(--secondary-color);
-  outline-offset: 2px;
 }
 
-.bottomNavElement :focus {
-  outline: 5px solid var(--secondary-color);
-  outline-offset: 2px;
-}
 
 /* Basic theme variables (will define in global.css later) */
 :global(body) {

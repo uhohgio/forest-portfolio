@@ -25,11 +25,10 @@ With its very own language, Microscript, this game engine was really interesting
 --- 
 Check out some of the games I made in Microstudio below! 
 
+🔗 <a href="https://microstudio.dev/i/FacilitatorGio/kitchenplants/" target="_blank">Game: Kitchen Plants🌷</a>
 
-🔗 [Game: Kitchen Plants🌷](https://microstudio.dev/i/FacilitatorGio/kitchenplants/)
+🔗 <a href="https://microstudio.dev/i/FacilitatorGio/sky_flyer_v3/" target="_blank">Game: Sky Flyer🐤</a>
 
-🔗 [Game: Sky Flyer🐤](https://microstudio.dev/i/FacilitatorGio/sky_flyer_v3/)
+🔗 <a href="https://microstudio.dev/i/FacilitatorGio/slime_racer/" target="_blank">Game: Slime Racer🐜</a>
 
-🔗 [Game: Slime Racer🐜](https://microstudio.dev/i/FacilitatorGio/slime_racer/)
-
-🔗 [Sample Project: Bubbles🫧](https://microstudio.dev/i/FacilitatorGio/bubbles/)
+🔗 <a href="https://microstudio.dev/i/FacilitatorGio/bubbles/" target="_blank">Sample Project: Bubbles🫧</a>

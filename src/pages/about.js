@@ -49,14 +49,10 @@ const AboutPage = () => {
           </div>
         <h2>About Me</h2>
         <p>
-          Hello! I'm Giovanna Ehrig, a 25-year-old software developer based in Los Angeles.
-          My journey into tech is fueled by a passion for creating immersive and intuitive user experiences.
-          I thrive on solving complex problems and bringing designs to life with clean, efficient code.
+          Hello! I'm Giovanna Ehrig, a 23-year-old software developer based in Los Angeles. My journey into tech is fueled by a passion for creating immersive and intuitive user experiences. I thrive on solving complex problems and bringing designs to life with clean, efficient code.
         </p>
         <p>
-          My core tech stack includes <strong>React, JavaScript, HTML, and CSS</strong>, with a strong focus on accessibility,
-          performance, and responsive design. I'm always eager to learn new technologies and explore innovative ways
-          to build engaging web applications.
+          My core tech stack includes <strong>React, JavaScript, HTML, and CSS</strong>, with a strong focus on accessibility, performance, and responsive design. I'm always eager to learn new technologies and explore innovative ways to build engaging web applications.
         </p>
         {/* Add more about your skills, values, or any easter egg hints here */}
         <p>
@@ -91,13 +87,13 @@ const AboutPage = () => {
               <div id="about-me-right-side">
                 <h3>Other Interests</h3>
                 <ul>
-                  <li>🎮 Gaming  </li>
+                  <li>🎮 Gaming </li>
                   <li>🧶 Crochet</li>
                   <li>✏️ Art</li>
                   <li>💄 Makeup</li>
-                  <li>Matcha Lattes 🍵 </li>
-                  <li>🎵  The Band CAMINO, Zedd, K/DA</li>
-                  <li>📺 Arcane, How to Train Your Dragon, anime.. </li>
+                  <li>🍵 Matcha Lattes</li>
+                  <li>🎵 The Band CAMINO, Zedd, K/DA</li>
+                  <li>📺 Arcane, How to Train Your Dragon, anime..</li>
                 </ul>
               </div>
             </div>

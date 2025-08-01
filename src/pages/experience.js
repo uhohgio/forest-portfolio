@@ -32,7 +32,7 @@ const ExperiencePage = () => {
   return (
       <div className={pageStyles.pageContent}>
         <h2>Experience & Education</h2>
-        <p>Details about my professional experience and academic background.</p>
+        <p>My professional experience and academic background.</p>
 
         <h3>Experience</h3>
         <ul>

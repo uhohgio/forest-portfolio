@@ -70,9 +70,8 @@ const Layout = ({ children }) => {
       </Helmet>
 
       {/* Static Background Image */}
-      <div
-        className={layoutStyles.background}
-      ></div>
+      <div className={layoutStyles.backgroundBehind}></div>
+      <div className={layoutStyles.background}></div>
 
         <GlobalControls />
 

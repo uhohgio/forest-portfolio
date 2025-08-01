@@ -1,12 +1,13 @@
 /* src/pages/page.module.css */
 
 .pageContent {
-  padding: 20px;
+  padding: 10px;
   /* Ensure content flows well within the main panel */
   max-width: 700px; /* Limit content width for readability */
   margin: 0 auto; /* Center content within the panel */
   text-align: left; /* Default text alignment */
   color: var(--text-color);
+  width: 100%;
 }
 
 .pageContent h2 {

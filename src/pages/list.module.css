@@ -1,8 +1,9 @@
 /* src/pages/list.module.css */
 
 .gridContainer {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* Responsive grid */
   gap: 25px;
   margin-top: 2rem;
   padding-bottom: 2rem; /* Space below grid */

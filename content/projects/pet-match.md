@@ -68,7 +68,7 @@ This hackathon pushed me to grow both technically and interpersonally. Here are 
 ---
 
 🚧 Live demo coming soon  
-🔗 [GitHub Repo](https://github.com/freeCodeCamp-2025-Summer-Hackathon/yellow-packet)
+🔗 <a href="https://github.com/freeCodeCamp-2025-Summer-Hackathon/yellow-packet" target="_blank">GitHub Repo</a>
 
 ## Photo Gallery
 
