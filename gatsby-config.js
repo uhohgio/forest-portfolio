@@ -13,7 +13,7 @@ module.exports = {
     title: `Giovanna Ehrig's Portfolio`,
     description: `A unique, game-like, forest-themed portfolio showcasing web development skills.`,
     author: `@uhohgio`, 
-    siteUrl: `https://www.gioehrig.com`, // Replace with your deployed URL
+    siteUrl: `https://uhohgio.github.io/forest-portfolio/`, // Replace with your deployed URL
   },
   plugins: [
     `gatsby-plugin-react-helmet`, // Manages <head> for SEO/accessibility
