@@ -9,16 +9,16 @@
   height: 100vh;
   z-index: -5;
   background: 
-    linear-gradient(var(--background-color-light, #BACECD) 70%, #2c5957),
-    url('../images/mountain-range-green.png') no-repeat center center;
+    url('../images/mountain-range-green.png') no-repeat center center, 
+    linear-gradient(var(--background-color-light, #BACECD) 70%, #2c5957);
   background-size: cover;
   background-attachment: fixed;
 }
 
 :global(.dark-mode) .background {
   background: 
-    linear-gradient(var(--background-color-dark, #2C2C59) 70%, #1e3d3c),
-    url('../images/mountain-range-green.png') no-repeat center center;
+    url('../images/mountain-range-green.png') no-repeat center center,
+    linear-gradient(var(--background-color-dark, #2C2C59) 70%, #1e3d3c);
   background-size: cover;
   background-attachment: fixed;
 }
