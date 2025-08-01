@@ -65,9 +65,6 @@ const ProjectTemplate = ({ data }) => {
           className={templateStyles.markdownContent}
           dangerouslySetInnerHTML={{ __html: html }}
         />
-
-        {/* Add links to live demo/repo if they are in your markdown */}
-        {/* You'd extract these from 'html' or add separate frontmatter fields for them */}
       </div>
       </>
   );

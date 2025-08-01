@@ -1,16 +1,26 @@
 /* src/components/Layout.module.css */
 
+
 .background {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -5; /* Send it behind everything else */
-  object-fit: cover; /* Ensure it covers the whole screen */
-  background: linear-gradient(var(--background-color-light, #BACECD) 70%,#2c5957); /* Default light mode background */
+  z-index: -5;
+  background: 
+    linear-gradient(var(--background-color-light, #BACECD) 70%, #2c5957),
+    url('../images/mountain-range-green.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 :global(.dark-mode) .background {
-    background: linear-gradient(var(--background-color-dark, #2C2C59) 70%,#1e3d3c); /* Dark mode background */
+  background: 
+    linear-gradient(var(--background-color-dark, #2C2C59) 70%, #1e3d3c),
+    url('../images/mountain-range-green.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {

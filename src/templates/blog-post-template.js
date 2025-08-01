@@ -31,6 +31,7 @@ const BlogPostTemplate = ({ data }) => {
       }
     }
   return (
+    <>
       <div className={templateStyles.pageContent}>
         <Link to="/blog" className={templateStyles.backButton} onMouseEnter={toggleButton} onClick={handleMouseClick}>← Back to Blog</Link>
 
@@ -45,6 +46,7 @@ const BlogPostTemplate = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: html }}
         />
         </div>
+      </>
   );
 };
 

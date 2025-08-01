@@ -31,8 +31,13 @@
 }
 
 .markdownContent {
+  max-width: 100%;
   line-height: 1.8;
   font-size: 1.1em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-x: hidden;
 }
 
 .markdownContent h2 {
@@ -67,13 +72,32 @@
   text-decoration: underline;
 }
 
+
+.markdownContent img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+.markdownContent iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+
 .markdownContent pre {
   background-color: rgba(0, 0, 0, 0.05); /* Light background for code blocks */
   padding: 15px;
   border-radius: 5px;
-  overflow-x: auto;
+  max-width: 100%;
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 0.9em;
+  white-space: pre-wrap;     /* ✅ allows line breaks in code */
+  word-break: break-word;    /* ✅ breaks long words/URLs */
+  overflow-x: auto;          /* keeps scroll if truly needed */
+
 }
 
 .markdownContent code {

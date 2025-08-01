@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet'; // For meta tags
-import { StaticImage } from 'gatsby-plugin-image'; // For background image
 import * as layoutStyles from './layout.module.css'; // Using CSS Modules
 import GlobalControls from './GlobalControls';
 import '../styles/global.css'; // Global styles
@@ -71,14 +70,9 @@ const Layout = ({ children }) => {
       </Helmet>
 
       {/* Static Background Image */}
-      <StaticImage
-        src="../images/mountain-range-green.png" // Your Figma background image path
-        alt="Game-like forest background"
-        layout="fullWidth"
-        placeholder="blurred"
-        loading="eager"
+      <div
         className={layoutStyles.background}
-      />
+      ></div>
 
         <GlobalControls />
 
