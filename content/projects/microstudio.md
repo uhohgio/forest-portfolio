@@ -31,4 +31,7 @@ Check out some of the games I made in Microstudio below!
 
 🔗 <a href="https://microstudio.dev/i/FacilitatorGio/slime_racer/" target="_blank">Game: Slime Racer🐜</a>
 
+🔗 <a href="https://microstudio.dev/i/FacilitatorGio/bingbing/" target="_blank">Game: Bing Bing Universe⭐</a>
+
 🔗 <a href="https://microstudio.dev/i/FacilitatorGio/bubbles/" target="_blank">Sample Project: Bubbles🫧</a>
+

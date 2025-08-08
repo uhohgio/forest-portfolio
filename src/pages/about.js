@@ -90,7 +90,6 @@ const AboutPage = () => {
                   <li>🎮 Gaming </li>
                   <li>🧶 Crochet</li>
                   <li>✏️ Art</li>
-                  <li>💄 Makeup</li>
                   <li>🍵 Matcha Lattes</li>
                   <li>🎵 The Band CAMINO, Zedd, K/DA</li>
                   <li>📺 Arcane, How to Train Your Dragon, anime..</li>
