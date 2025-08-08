@@ -102,6 +102,7 @@ Thank you for reading if you made it this far! I appreciate your interest in my 
 
 ---
 <h2 id="lessons-learned">Lessons Learned</h2>
+
 - Blend personality with professionalism — The forest theme reflects me, but the structure keeps it recruiter-friendly.
 
 - Prototype before coding — Designing in Figma saved time and helped me organize assets.
