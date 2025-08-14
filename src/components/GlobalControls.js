@@ -5,7 +5,7 @@ import GlobalContext from '../context/GlobalControls';
 import { withPrefix } from 'gatsby';
 
 import volOn from '/static/Volume-on.svg'; // Path to volume on icon
-import volOff from '/static/volume-x.svg'; // Path to volume off icon
+import volOff from '/static/Volume-x.svg'; // Path to volume off icon
 import sun from '/static/Sun.svg'; // Path to sun icon
 import moon from '/static/Moon.svg'; // Path to moon icon
 import homeIcon from '/static/Home.svg'; // Path to home icon

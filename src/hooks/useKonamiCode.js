@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const konamiCode = [
   'ArrowUp', 'ArrowUp',
@@ -9,18 +9,15 @@ const konamiCode = [
 ];
 
 const useKonamiCode = (callback) => {
-  const [sequence, setSequence] = useState([]);
-
   useEffect(() => {
+    let sequence = [];
+
     const handleKeyDown = (event) => {
-      setSequence((prevSequence) => {
-        const newSequence = [...prevSequence, event.key].slice(-konamiCode.length);
-        if (newSequence.join('') === konamiCode.join('')) {
-          callback(); // Trigger the callback
-          return []; // Reset sequence after activation
-        }
-        return newSequence;
-      });
+      sequence = [...sequence, event.key].slice(-konamiCode.length);
+      if (sequence.join('') === konamiCode.join('')) {
+        callback(); // Trigger the callback
+        sequence = []; // Reset sequence after activation
+      }
     };
 
     if (typeof window !== 'undefined') {
