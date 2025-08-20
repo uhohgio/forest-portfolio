@@ -91,7 +91,7 @@ const AboutPage = () => {
                   <li>🧶 Crochet</li>
                   <li>✏️ Art</li>
                   <li>🍵 Matcha Lattes</li>
-                  <li>🎵 The Band CAMINO, Zedd, K/DA</li>
+                  <li>🎵 The Band CAMINO, Zedd, K/DA, Paramore..</li>
                   <li>📺 Arcane, How to Train Your Dragon, anime..</li>
                 </ul>
               </div>
