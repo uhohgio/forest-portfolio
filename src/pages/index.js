@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'; // For profile image
 import * as indexStyles from './index.module.css'; // CSS Modules for this page
 import * as cardStyles from '../components/Card.module.css'; // Example card styles
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faLinkedin, faGithub, faJs, faReact, faNodeJs, faPython, faUnity } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub, faJs, faReact, faNodeJs, faPython, faUnity, faFigma } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import cPlusPlusGreen from '/static/cplusplus-green.svg'
 import GlobalContext from '../context/GlobalControls';
@@ -77,6 +77,7 @@ const IndexPage = () => {
             <FontAwesomeIcon icon={faJs} className={indexStyles.techStackElem}/>
             <FontAwesomeIcon icon={faReact} className={indexStyles.techStackElem}/>
             <FontAwesomeIcon icon={faNodeJs} className={indexStyles.techStackElem}/>
+            <FontAwesomeIcon icon={faFigma} className={indexStyles.techStackElem}/>
             <FontAwesomeIcon icon={faPython} className={indexStyles.techStackElem}/>
             <img src={cPlusPlusGreen} className={indexStyles.techStackElem}  alt='C++'/>
             <FontAwesomeIcon icon={faUnity} className={indexStyles.techStackElem}/>

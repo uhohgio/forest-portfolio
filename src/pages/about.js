@@ -44,12 +44,12 @@ const AboutPage = () => {
           </div>
           <div className={pageStyles.heading}>
             <h1>Giovanna Ehrig</h1>
-            <p>Junior Developer and UI/UX designer</p>
+            <p>Junior UI/UX developer</p>
             {/* <p style={{fontWeight: 'normal'}}>Native Fluency in English and Spanish</p> */}
           </div>
         <h2>About Me</h2>
         <p>
-          Hello! I'm Giovanna Ehrig, a 23-year-old software developer from Los Angeles, California. My journey into tech is fueled by a passion for creating immersive and intuitive user experiences. I thrive on solving complex problems and bringing designs to life with clean, efficient code.
+          Hello! I'm Giovanna Ehrig, a 23-year-old software developer from Los Angeles, California. My journey into tech is fueled by an ardor for creating immersive and intuitive user experiences. I thrive on solving complex problems and bringing designs to life with clean, efficient code.
         </p>
         <p>
           My core tech stack includes <strong>React, JavaScript, HTML, and CSS</strong>, with a strong focus on accessibility, performance, and responsive design. I'm always eager to learn new technologies and explore innovative ways to build engaging web applications.
@@ -64,7 +64,7 @@ const AboutPage = () => {
                     aria-expanded={showSecret} // Announce if expanded
                 >
                     secret
-                </span> passion for video games.
+                </span> passion for video games and fun easter eggs 😉.
             </p>
             {showSecret && (
                 <div>
@@ -77,9 +77,9 @@ const AboutPage = () => {
               <div id="about-me-left-side">
                 <h3>Recent CS Grad</h3>
                 <ul>
-                  <li>🌱 4 years of coding experience</li>
-                  <li>📱 Currently focused on web development and web design</li>
-                  <li>🚀 Actively seeking 2025 internships or entry-level SWE roles</li>
+                  <li>🌱 5 years of coding experience</li>
+                  <li>📱 Currently focused on UI/UX development</li>
+                  <li>🚀 Actively seeking 2026 internships or entry-level SWE roles</li>
                   <li>💡 Love blending creativity & logic through code</li>
                   <li>🧠 Deep-diving into FreeCodeCamp: <a href='https://www.freecodecamp.org/UhOhGio' target="_blank" rel="noreferrer">Check out my profile</a></li>
                 </ul>
@@ -92,7 +92,7 @@ const AboutPage = () => {
                   <li>✏️ Art</li>
                   <li>🍵 Matcha Lattes</li>
                   <li>🎵 The Band CAMINO, Zedd, K/DA, Paramore..</li>
-                  <li>📺 Arcane, How to Train Your Dragon, anime..</li>
+                  <li>📺 Arcane, How to Train Your Dragon, Stranger Things..</li>
                 </ul>
               </div>
             </div>

@@ -73,7 +73,10 @@ We used Unity (URP) for development and GitHub for version control and project c
 ---
 
 🚧 Live demo coming soon  
-🔗 <a href="https://github.com/irmtou/ebishrimp" target="_blank">GitHub Repo</a>
+
+🔗 <a href="https://github.com/irmtou/ebishrimp" target="_blank">GitHub Repo (check the gio's-updates branch for most recent updates)</a>
+
+📚 <a href="https://docs.google.com/document/d/1O2gDnHEanvHC_tfeFS59FHc8d7Si-940SkPgaRCQXas/edit?usp=sharing" target="_blank">The most current documentation</a>
 
 ## Photo Gallery
 
