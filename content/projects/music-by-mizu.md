@@ -1,6 +1,6 @@
 ---
 title: "Music by Mizu"
-date: "2025-04-15"
+date: "2025-12-01"
 slug: "music-by-mizu"
 tags: ["React", "Node.js", "Typescript4", "Tailwind"]
 description: "A music portfolio for Erik Shimizu"
