@@ -3,7 +3,8 @@ import * as layoutStyles from './layout.module.css'; // Using CSS Modules
 import GlobalControls from './GlobalControls';
 import '../styles/global.css'; // Global styles
 import React, { useMemo, useEffect, useState } from 'react'; // For side effects like toggling dark mode
-import pineTree from '/static/pine_tree.svg';
+// import pineTree from '/static/pine_tree.svg';
+import pineTree from '/static/christmas-tree.svg';
 import AnimatedPageWrapper from './AnimatedPageWrapper';
 import useKonamiCode from '../hooks/useKonamiCode';
 import GlobalContext from '../context/GlobalControls';
