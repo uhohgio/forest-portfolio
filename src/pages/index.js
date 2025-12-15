@@ -55,6 +55,7 @@ const IndexPage = () => {
               role="button" // Tells assistive tech it's a button
               aria-expanded={showSecret} // Indicates if the secret content is visible
               aria-controls="secret-text" // Links to the ID of the secret text
+              aria-labelledby='secret-text'
               className={indexStyles.secretImageWrapper} // Add a class for styling/cursor
             >
               <StaticImage
@@ -74,13 +75,13 @@ const IndexPage = () => {
           <p className={indexStyles.tagline}>23 year old software developer based in LA</p>
           {/* Tech Stack - Placeholder for now */}
           <div className={indexStyles.techStack}>
-            <FontAwesomeIcon icon={faJs} className={indexStyles.techStackElem}/>
-            <FontAwesomeIcon icon={faReact} className={indexStyles.techStackElem}/>
-            <FontAwesomeIcon icon={faNodeJs} className={indexStyles.techStackElem}/>
-            <FontAwesomeIcon icon={faFigma} className={indexStyles.techStackElem}/>
-            <FontAwesomeIcon icon={faPython} className={indexStyles.techStackElem}/>
-            <img src={cPlusPlusGreen} className={indexStyles.techStackElem}  alt='C++'/>
-            <FontAwesomeIcon icon={faUnity} className={indexStyles.techStackElem}/>
+            <FontAwesomeIcon icon={faJs} className={indexStyles.techStackElem} alt='JavaScript'/>
+            <FontAwesomeIcon icon={faReact} className={indexStyles.techStackElem} alt='React'/>
+            <FontAwesomeIcon icon={faNodeJs} className={indexStyles.techStackElem} alt='Node.js'/>
+            <FontAwesomeIcon icon={faFigma} className={indexStyles.techStackElem} alt='Figma'/>
+            <FontAwesomeIcon icon={faPython} className={indexStyles.techStackElem} alt='Python'/>
+            <img src={cPlusPlusGreen} className={indexStyles.techStackElem} alt='C++'/>
+            <FontAwesomeIcon icon={faUnity} className={indexStyles.techStackElem} alt='Unity'/>
           </div>
         </div>  
 
@@ -101,10 +102,10 @@ const IndexPage = () => {
         </div>
 
         <div>
-          {/* Add SVG icons or FontAwesome here */}
-          <Link to="mailto:gioehrig@gmail.com" target="_blank" className={indexStyles.bottomNavElement}><FontAwesomeIcon icon={faEnvelope}  onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
-          <Link to="https://www.linkedin.com/in/gio-ehrig-691901214/" target="_blank" className={indexStyles.bottomNavElement}><FontAwesomeIcon icon={faLinkedin}  onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
-          <Link to="https://github.com/uhohgio" target="_blank" className={indexStyles.bottomNavElement}><FontAwesomeIcon icon={faGithub}  onMouseEnter={handleButtonHover} onClick={handleMouseClick}/></Link>
+          {/* Contact Links */}
+          <Link to="mailto:gioehrig@gmail.com" target="_blank" className={indexStyles.bottomNavElement}><FontAwesomeIcon icon={faEnvelope}  onMouseEnter={handleButtonHover} onClick={handleMouseClick} alt="gioehrig@gmail.com"/></Link>
+          <Link to="https://www.linkedin.com/in/gio-ehrig-691901214/" target="_blank" className={indexStyles.bottomNavElement}><FontAwesomeIcon icon={faLinkedin}  onMouseEnter={handleButtonHover} onClick={handleMouseClick} alt="LinkedIn"/></Link>
+          <Link to="https://github.com/uhohgio" target="_blank" className={indexStyles.bottomNavElement}><FontAwesomeIcon icon={faGithub}  onMouseEnter={handleButtonHover} onClick={handleMouseClick} alt="GitHub"/></Link>
         </div>
       </div>
   );

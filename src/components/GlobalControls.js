@@ -64,39 +64,41 @@ const playAudio = (src) => {
   return (
     <div className={controlsStyles.container}>
       {/* Top Left: Home Button */}
-      <button className={controlsStyles.controlButton}>
+      <button className={controlsStyles.controlButton}tabindex="-1">
         <Link to="/" onClick={toggleHome} 
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') { // Spacebar is also common for buttons
-                toggleHome();
-              }
-            }}>
+          onKeyDown={(e) => {
+            if (e.key === 'enter') {
+              toggleHome();
+            }
+          }}
+        >
           <img 
             src={homeIcon} 
-            alt="Home" 
-            
+            alt="Home"
           />
         </Link>
       </button>
       {/* Other Controls  */}
       <button 
+      className={controlsStyles.controlButton}
       onClick={toggleDarkMode} 
       onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') { // Spacebar is also common for buttons
+              if (e.key === 'enter') { // Spacebar is also common for buttons
                 toggleDarkMode();
               }
             }}
-      className={controlsStyles.controlButton}>
+        >
         {isDarkMode ? <img src={sun} alt="Light Mode" /> : <img src={moon} alt="Dark Mode" />}
       </button>
       <button 
+      className={controlsStyles.controlButton} 
       onClick={toggleVolume}
       onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') { // Spacebar is also common for buttons
+              if (e.key === 'enter') { // Spacebar is also common for buttons
                 toggleVolume();
               }
             }}
-      className={controlsStyles.controlButton}      
+           
       >
         {isVolumeOn ? <img src={volOn} alt="Volume On" /> : <img src={volOff} alt="Volume Off" />}
       </button>
@@ -104,8 +106,8 @@ const playAudio = (src) => {
       {/* Top Right: Exit Button (often just closes window or goes back) */}
       {isInStandaloneMode && (
         <button
-          onClick={() => window.close()}
           className={controlsStyles.controlButton}
+          onClick={() => window.close()}
         >
           <img src={exitIcon} alt="Exit" />
         </button>

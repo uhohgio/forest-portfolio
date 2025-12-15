@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
 
   return (
     <GlobalContext.Provider value={contextValue}>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: "en" }}>
         <meta charSet="utf-8" />
         <title>Giovanna Ehrig - Portfolio</title>
         <meta name="description" content="Get to know Giovanna Ehrig through her portfolio!" />
@@ -83,7 +83,7 @@ const Layout = ({ children }) => {
         )}
 
         {/* This is where all page content (the central panel) will go */}
-        <img src={pineTree} className={layoutStyles.pineTreeLeft} alt='left pine tree'></img><img src={pineTree} className={layoutStyles.pineTreeRight} alt='right pine tree'></img>
+        <img src={pineTree} className={layoutStyles.pineTreeLeft} alt='left pine tree' fetchpriority="low"></img><img src={pineTree} className={layoutStyles.pineTreeRight} alt='right pine tree'></img>
       <AnimatedPageWrapper >
         <div className={layoutStyles.container} >  
           <main className={layoutStyles.mainContent}>
