@@ -1,4 +1,6 @@
 import React, { useCallback, useContext } from 'react';
+
+import { Tooltip } from 'react-tooltip';
 import { Link } from 'gatsby'; // Gatsby's way to navigate between pages
 import { StaticImage } from 'gatsby-plugin-image'; // For profile image
 import * as indexStyles from './index.module.css'; // CSS Modules for this page
@@ -72,16 +74,30 @@ const IndexPage = () => {
           <h1 className={indexStyles.heading}><span style={{ color: 'var(--primary-color)', fontSize: '2rem'}}>Hi! I'm</span> <br /> Gio Ehrig</h1>
         </div>
         <div className={indexStyles.profileHeader}>
-          <p className={indexStyles.tagline}>23 year old software developer based in LA</p>
+          <p className={indexStyles.tagline}>24-year-old software developer based in LA</p>
           {/* Tech Stack - Placeholder for now */}
           <div className={indexStyles.techStack}>
-            <FontAwesomeIcon icon={faJs} className={indexStyles.techStackElem} alt='JavaScript'/>
-            <FontAwesomeIcon icon={faReact} className={indexStyles.techStackElem} alt='React'/>
-            <FontAwesomeIcon icon={faNodeJs} className={indexStyles.techStackElem} alt='Node.js'/>
-            <FontAwesomeIcon icon={faFigma} className={indexStyles.techStackElem} alt='Figma'/>
-            <FontAwesomeIcon icon={faPython} className={indexStyles.techStackElem} alt='Python'/>
-            <img src={cPlusPlusGreen} className={indexStyles.techStackElem} alt='C++'/>
-            <FontAwesomeIcon icon={faUnity} className={indexStyles.techStackElem} alt='Unity'/>
+            <span className='techStack' title='JavaScript' aria-hidden="true">
+              <FontAwesomeIcon icon={faJs} className={indexStyles.techStackElem} alt='JavaScript' />
+            </span>
+            <span className='techStack' title='React' aria-hidden="true">
+              <FontAwesomeIcon icon={faReact} className={indexStyles.techStackElem} alt='React' />
+            </span>
+            <span className='techStack' title='Node.js' aria-hidden="true">
+              <FontAwesomeIcon icon={faNodeJs} className={indexStyles.techStackElem} alt='Node.js' />
+            </span>
+            <span className='techStack' title='Figma' aria-hidden="true">
+              <FontAwesomeIcon icon={faFigma} className={indexStyles.techStackElem} alt='Figma'/>
+            </span>
+            <span className='techStack'title='Python' aria-hidden="true">
+              <FontAwesomeIcon icon={faPython} className={indexStyles.techStackElem} alt='Python' />
+            </span>
+            <span className='techStack' title='C++' aria-hidden="true">
+              <img src={cPlusPlusGreen} className={indexStyles.techStackElem} alt='C++'/>
+            </span>
+            <span className='techStack'aria-hidden="true" title='Unity'>
+              <FontAwesomeIcon icon={faUnity} className={indexStyles.techStackElem} alt='Unity'/>
+            </span>
           </div>
         </div>  
 

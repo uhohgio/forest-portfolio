@@ -55,9 +55,9 @@ const ExperiencePage = () => {
           <li><strong>Bachelor of Science in Computer Science</strong> | San Diego State University, San Diego (SDSU) | Aug 2020 - Dec 2024</li>
           <li><strong>Online Certifications</strong>
             <ul>
+              <li>Responsive Web Design | FreeCodeCamp | December 2025 </li>
               <li>Frontend Developer &#40;React&#41; | Hackerrank | August 2025 </li>
               <li>JavaScript Algorithms and Data Structures | FreeCodeCamp | June 2025 </li>
-              <li>Responsive Web Design | FreeCodeCamp | May 2025 </li>
               <li>Advanced Intermediate Technical Interview Prep | CodePath | April 2025 </li>
             </ul>
           </li>
